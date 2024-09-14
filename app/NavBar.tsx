@@ -1,5 +1,12 @@
 "use client";
 
+import { Skeleton } from "@/app/components";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
+import { AiFillBug } from "react-icons/ai";
+import classnames from "classnames";
+import { useSession } from "next-auth/react";
 import {
   Avatar,
   Box,
@@ -8,12 +15,6 @@ import {
   Flex,
   Text,
 } from "@radix-ui/themes";
-import classnames from "classnames";
-import { useSession } from "next-auth/react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { AiFillBug } from "react-icons/ai";
-import { Skeleton } from "@/app/components";
 
 const NavBar = () => {
   return (
@@ -82,6 +83,7 @@ const AuthStatus = () => {
             size="2"
             radius="full"
             className="cursor-pointer"
+            referrerPolicy="no-referrer"
           />
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
